@@ -1,0 +1,117 @@
+[gd_scene load_steps=17 format=3 uid="uid://q2mup5emownd"]
+
+[ext_resource type="Texture2D" uid="uid://b626xpynv6b5c" path="res://Assets/Room_Builder_subfiles/animated_elevator_door_entrance_1.png" id="1_6hjvv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kme8x"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6noj"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t00oc"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11e03"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jr4n"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrhyc"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w53i"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plivn"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn5e7"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5ng2"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g15s"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb0j5"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lodt4"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym486"]
+atlas = ExtResource("1_6hjvv")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qffil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kme8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6noj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t00oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11e03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jr4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrhyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w53i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plivn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn5e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5ng2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g15s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb0j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lodt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym486")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Elevator" type="Node2D"]
+scale = Vector2(1.2, 1.2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qffil")
+autoplay = "default"
+frame_progress = 0.367062
