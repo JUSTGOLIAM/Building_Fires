@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://cjsil4fnc5dj7"]
+[gd_scene load_steps=58 format=4 uid="uid://cjsil4fnc5dj7"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_ts22p"]
 [ext_resource type="Texture2D" uid="uid://dtydlcqts7j81" path="res://Assets/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="2_50ac4"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dr3f5bow4c01" path="res://Assets/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="15_xkg82"]
 [ext_resource type="PackedScene" uid="uid://c23gyh6jlj1w0" path="res://Character/player.tscn" id="16_yyru8"]
 [ext_resource type="PackedScene" uid="uid://q2mup5emownd" path="res://Scene/elevator.tscn" id="18_ja7i2"]
+[ext_resource type="PackedScene" uid="uid://bpvt0la4oy0p7" path="res://Scene/Towel.tscn" id="19_dskgt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3iswp"]
 texture = ExtResource("1_ts22p")
@@ -15887,7 +15888,7 @@ tile_set = SubResource("TileSet_xvx2y")
 
 [node name="Furniture_1_Living" type="TileMapLayer" parent="."]
 position = Vector2(68, 41)
-tile_map_data = PackedByteArray("AAABAP3/AAAAACIAAAACAP3/AAACACIAAAADAP3/AAACACIAAAABAPz/AAAAACEAAAAEAPz/AAACACEAAAAEAP3/AAACACIAAAAFAPz/AAABACEAAAAFAP3/AAABACIAAAACAPz/AAACACEAAAADAPz/AAACACEAAAABAAEAAgAHAAoAAAACAAEAAgAIAAoAAAADAAEAAgAHAAoAAAAEAAEAAgAIAAoAAAAFAAEAAgAJAAoAAAAAAAAAAgAIAAIAAAABAAIAAgAHAAsAAAACAAIAAgAIAAsAAAADAAIAAgAHAAsAAAAEAAIAAgAIAAsAAAAFAAIAAgAJAAsAAAARAAEAAAADABEAAAARAAIAAAADAA8AAAAQAP//AAACAAwAAAAQAAAAAAACAA0AAAARAAAAAAADABAAAAASAAAAAAAEABAAAAASAAEAAAAEABEAAAASAAIAAAAEAA8AAAATAP//AAAFAAwAAAATAAAAAAAFAA0AAAD4//z/AAAAACEAAAD4//3/AAAAACIAAAD5//z/AAACACEAAAD5//3/AAACACIAAAD6//z/AAABACEAAAD6//3/AAABACIAAAA=")
+tile_map_data = PackedByteArray("AAABAAEAAgAHAAoAAAACAAEAAgAIAAoAAAADAAEAAgAHAAoAAAAEAAEAAgAIAAoAAAAFAAEAAgAJAAoAAAAAAAAAAgAIAAIAAAABAAIAAgAHAAsAAAACAAIAAgAIAAsAAAADAAIAAgAHAAsAAAAEAAIAAgAIAAsAAAAFAAIAAgAJAAsAAAARAAEAAAADABEAAAARAAIAAAADAA8AAAAQAP//AAACAAwAAAAQAAAAAAACAA0AAAARAAAAAAADABAAAAASAAAAAAAEABAAAAASAAEAAAAEABEAAAASAAIAAAAEAA8AAAATAP//AAAFAAwAAAATAAAAAAAFAA0AAAD4//z/AAAAACEAAAD4//3/AAAAACIAAAD5//z/AAACACEAAAD5//3/AAACACIAAAD6//z/AAABACEAAAD6//3/AAABACIAAAABAPz/AAAAACEAAAABAP3/AAAAACIAAAACAPz/AAACACEAAAACAP3/AAACACIAAAADAPz/AAACACEAAAADAP3/AAACACIAAAAEAPz/AAACACEAAAAEAP3/AAACACIAAAAFAPz/AAABACEAAAAFAP3/AAABACIAAAA=")
 tile_set = SubResource("TileSet_spxps")
 
 [node name="Furniture_2__Living" type="TileMapLayer" parent="."]
@@ -15938,3 +15939,6 @@ position = Vector2(-37, 45)
 
 [node name="Elevator2" parent="." instance=ExtResource("18_ja7i2")]
 position = Vector2(122, -148)
+
+[node name="Towel" parent="." instance=ExtResource("19_dskgt")]
+position = Vector2(-87, 38)

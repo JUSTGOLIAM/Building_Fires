@@ -72,3 +72,7 @@ func play_anim(movement):
 			anim.play("walk_Back")
 		elif movement == 0:
 			anim.play("idle_Back")
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("sss")
