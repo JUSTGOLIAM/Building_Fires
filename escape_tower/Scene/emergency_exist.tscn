@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbhs7b2regnhu"]
+
+[ext_resource type="Texture2D" uid="uid://cmm50134rcglm" path="res://Assets/!$Doors_bathroom_emergency_exit_cold_room.png" id="1_4tfts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlop3"]
+atlas = ExtResource("1_4tfts")
+region = Rect2(48, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34tek"]
+atlas = ExtResource("1_4tfts")
+region = Rect2(48, 144, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1vit"]
+atlas = ExtResource("1_4tfts")
+region = Rect2(48, 288, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iint"]
+atlas = ExtResource("1_4tfts")
+region = Rect2(48, 432, 48, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0fdg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlop3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34tek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1vit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iint")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Emergency_Exist" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a0fdg")
+autoplay = "default"
+frame_progress = 0.801632
