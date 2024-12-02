@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://cjsil4fnc5dj7"]
+[gd_scene load_steps=76 format=4 uid="uid://cjsil4fnc5dj7"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_ts22p"]
 [ext_resource type="Texture2D" uid="uid://dtydlcqts7j81" path="res://Assets/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="2_50ac4"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://c23gyh6jlj1w0" path="res://Character/player.tscn" id="16_yyru8"]
 [ext_resource type="PackedScene" uid="uid://q2mup5emownd" path="res://Scene/elevator.tscn" id="18_ja7i2"]
 [ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="19_dskgt"]
+[ext_resource type="Texture2D" uid="uid://c7e6pufkopaa2" path="res://fire 1.png" id="26_642u7"]
+[ext_resource type="Script" path="res://Scene/fire.gd" id="27_26icx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3iswp"]
 texture = ExtResource("1_ts22p")
@@ -19025,6 +19027,9 @@ texture = ExtResource("15_xkg82")
 [sub_resource type="TileSet" id="TileSet_is10n"]
 sources/0 = SubResource("TileSetAtlasSource_x83ay")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wyaws"]
+radius = 795.774
+
 [node name="Home" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [144.0]
 
@@ -19177,3 +19182,18 @@ position = Vector2(-37, 45)
 [node name="Towel" parent="." instance=ExtResource("19_dskgt")]
 z_index = 1
 position = Vector2(-87, 38)
+
+[node name="Fire" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(110, 54)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("26_642u7")
+script = ExtResource("27_26icx")
+
+[node name="Area2D" type="Area2D" parent="Fire"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire/Area2D"]
+shape = SubResource("CircleShape2D_wyaws")
+
+[connection signal="playermoved" from="player" to="Fire" method="_on_player_playermoved"]
+[connection signal="body_exited" from="Fire/Area2D" to="Fire" method="_on_area_2d_body_exited"]
