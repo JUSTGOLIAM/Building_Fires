@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhfehbbidun6c"]
+
+[ext_resource type="Texture2D" uid="uid://pbkhmxqkocvd" path="res://Assets/Furniture/!Small_doors_and_others.png" id="1_4wlt1"]
+[ext_resource type="Script" path="res://Script/open_door_2d.gd" id="2_wcpt6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpovf"]
+atlas = ExtResource("1_4wlt1")
+region = Rect2(96, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdqg8"]
+atlas = ExtResource("1_4wlt1")
+region = Rect2(96, 0, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xfr3"]
+atlas = ExtResource("1_4wlt1")
+region = Rect2(96, 96, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx4nr"]
+atlas = ExtResource("1_4wlt1")
+region = Rect2(96, 192, 48, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j31ia"]
+atlas = ExtResource("1_4wlt1")
+region = Rect2(96, 288, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdf7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpovf")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdqg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xfr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx4nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j31ia")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjro6"]
+size = Vector2(42, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjs1c"]
+size = Vector2(48, 64)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mdf7g")
+animation = &"close"
+script = ExtResource("2_wcpt6")
+
+[node name="door1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door1"]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_qjro6")
+
+[node name="checking" type="Area2D" parent="door1"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="door1/checking"]
+position = Vector2(0, 80)
+shape = SubResource("RectangleShape2D_cjs1c")
+
+[connection signal="body_entered" from="door1/checking" to="door1" method="_on_checking_body_entered"]
+[connection signal="body_entered" from="door1/checking" to="." method="_on_checking_body_entered"]

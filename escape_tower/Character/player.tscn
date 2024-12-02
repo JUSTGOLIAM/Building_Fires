@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Script/player.gd" id="1_jgbi8"]
 [ext_resource type="Texture2D" uid="uid://cbnw4i8xwy5xb" path="res://Assets/Character/Kid_Abby_idle_anim_16x16.png" id="1_qjy6y"]
-[ext_resource type="PackedScene" uid="uid://vayvc6vv2rrb" path="res://Scene/info.tscn" id="2_yul4u"]
+[ext_resource type="PackedScene" path="res://Scene/info.tscn" id="2_yul4u"]
 [ext_resource type="Texture2D" uid="uid://4fkoi6kyy0pe" path="res://Assets/Character/kid_Abby_run_16x16.png" id="3_ltxpm"]
-[ext_resource type="PackedScene" uid="uid://c3l12egpswhqh" path="res://Scene/info_1.tscn" id="5_5wsph"]
+[ext_resource type="PackedScene" path="res://Scene/info_1.tscn" id="5_5wsph"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4qs6"]
 atlas = ExtResource("1_qjy6y")
@@ -391,7 +391,7 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_veea5"]
 radius = 11.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_jgbi8")
 metadata/_edit_horizontal_guides_ = [17.0]
 
