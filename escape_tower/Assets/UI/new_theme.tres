@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://pwo4m4x3owuu"]
+
+[ext_resource type="Texture2D" uid="uid://dwth5xd4yay44" path="res://Assets/UI/Modern_UI_Style_1.png" id="1_gxj78"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfdvg"]
+texture = ExtResource("1_gxj78")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(60, 251, 24, 25)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_pfdvg")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3l12egpswhqh"]
+
+[ext_resource type="Theme" uid="uid://pwo4m4x3owuu" path="res://Assets/UI/new_theme.tres" id="1_6riky"]
+[ext_resource type="PackedScene" uid="uid://be2xp2kjwertb" path="res://Scene/man_head.tscn" id="2_s4mp4"]
+[ext_resource type="FontFile" uid="uid://bth2u5nhrxx8i" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="3_flcxb"]
+[ext_resource type="FontFile" uid="uid://qfa0fom2nnwa" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_52m60"]
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 196.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/margin_bottom = 0
+
+[node name="Panel2" type="Panel" parent="MarginContainer3"]
+layout_mode = 2
+theme = ExtResource("1_6riky")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Man_head" parent="MarginContainer3/MarginContainer/HBoxContainer/MarginContainer" instance=ExtResource("2_s4mp4")]
+position = Vector2(18, 16)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.517647, 0.298039, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("3_flcxb")
+theme_override_font_sizes/font_size = 8
+text = "Goals:"
+
+[node name="Label2" type="Label" parent="MarginContainer3/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.517647, 0.298039, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("4_52m60")
+theme_override_font_sizes/font_size = 8
+text = "Get out of the building!"
