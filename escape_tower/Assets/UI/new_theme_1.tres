@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://gglyew7uy38m"]
+
+[ext_resource type="Texture2D" uid="uid://dwth5xd4yay44" path="res://Assets/UI/Modern_UI_Style_1.png" id="1_fjogy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c8pn8"]
+texture = ExtResource("1_fjogy")
+texture_margin_left = 8.1333
+texture_margin_top = 2.50206
+texture_margin_bottom = 6.35391
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+region_rect = Rect2(71, 49, 32.6295, 13.9261)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_c8pn8")
