@@ -398,12 +398,6 @@ metadata/_edit_horizontal_guides_ = [17.0]
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="Info" parent="." instance=ExtResource("2_yul4u")]
-offset_left = -144.0
-offset_top = -81.0
-offset_right = -144.0
-offset_bottom = -81.0
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yuh7i")
 animation = &"idle_Back"
@@ -418,6 +412,12 @@ shape = SubResource("CircleShape2D_ppkv1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_veea5")
+
+[node name="Info" parent="." instance=ExtResource("2_yul4u")]
+offset_left = -144.0
+offset_top = -81.0
+offset_right = -144.0
+offset_bottom = -81.0
 
 [node name="Info2" parent="." instance=ExtResource("5_5wsph")]
 offset_left = -144.0

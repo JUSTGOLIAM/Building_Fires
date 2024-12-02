@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://pwo4m4x3owuu" path="res://Assets/UI/new_theme.tres" id="1_xtt45"]
 [ext_resource type="PackedScene" uid="uid://be2xp2kjwertb" path="res://Scene/man_head.tscn" id="2_v3waa"]
-[ext_resource type="FontFile" uid="uid://bth2u5nhrxx8i" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="3_6ocjt"]
+[ext_resource type="FontFile" uid="uid://qccqn5puw4gx" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_jfaj6"]
 
 [node name="Info" type="Control"]
 layout_mode = 3
@@ -45,7 +45,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.517647, 0.298039, 0.0980392, 1)
-theme_override_fonts/font = ExtResource("3_6ocjt")
+theme_override_fonts/font = ExtResource("3_jfaj6")
 theme_override_font_sizes/font_size = 8
 text = "There's a fire!
 You live on the fourth floor!
