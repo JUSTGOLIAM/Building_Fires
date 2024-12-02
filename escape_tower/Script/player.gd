@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 signal playermoved
 
-const SPEED = 100.0
+const SPEED = 200.0
 var current_dir = "none"
 
 func _physics_process(delta):

@@ -19179,21 +19179,21 @@ tile_set = SubResource("TileSet_is10n")
 z_index = 1
 position = Vector2(-37, 45)
 
-[node name="Towel" parent="." instance=ExtResource("19_dskgt")]
+[node name="Fire" type="Sprite2D" parent="player"]
 z_index = 1
-position = Vector2(-87, 38)
-
-[node name="Fire" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(110, 54)
+position = Vector2(0, 2)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("26_642u7")
 script = ExtResource("27_26icx")
 
-[node name="Area2D" type="Area2D" parent="Fire"]
+[node name="Area2D" type="Area2D" parent="player/Fire"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Fire/Area2D"]
 shape = SubResource("CircleShape2D_wyaws")
 
-[connection signal="playermoved" from="player" to="Fire" method="_on_player_playermoved"]
-[connection signal="body_exited" from="Fire/Area2D" to="Fire" method="_on_area_2d_body_exited"]
+[node name="Towel" parent="." instance=ExtResource("19_dskgt")]
+z_index = 1
+position = Vector2(-87, 38)
+
+[connection signal="playermoved" from="player" to="player/Fire" method="_on_player_playermoved"]
+[connection signal="body_exited" from="player/Fire/Area2D" to="player/Fire" method="_on_area_2d_body_exited"]

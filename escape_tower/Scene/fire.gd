@@ -5,8 +5,8 @@ extends Sprite2D
 func _ready() -> void:
 	pass # Replace with function body.
 func firegwrowth():
-	scale.x-=0.0005
-	scale.y-=0.0005
+	scale.x-=0.0008
+	scale.y-=0.0008
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
