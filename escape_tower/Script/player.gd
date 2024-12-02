@@ -1,7 +1,8 @@
 extends CharacterBody2D
 class_name Player
+signal playermoved
 
-const SPEED = 100.0
+const SPEED = 200.0
 var current_dir = "none"
 
 func _physics_process(delta):
@@ -15,24 +16,28 @@ func player_movement(_delta):
 		play_anim(1) 
 		velocity.x = SPEED
 		velocity.y = 0
+		playermoved.emit()
  
 	elif Input.is_action_pressed("left"):
 		current_dir = "left"
 		play_anim(1) 
 		velocity.x = -SPEED
 		velocity.y = 0
+		playermoved.emit()
 		
 	elif Input.is_action_pressed("front"):
 		current_dir = "down"
 		play_anim(1) 
 		velocity.y = SPEED
 		velocity.x = 0
+		playermoved.emit()
 		
 	elif Input.is_action_pressed("back"):
 		current_dir = "up"
 		play_anim(1) 
 		velocity.y = -SPEED
 		velocity.x = 0
+		playermoved.emit()
 		
 	else:
 		play_anim(0) 
