@@ -74,5 +74,5 @@ shape = SubResource("RectangleShape2D_qjro6")
 position = Vector2(0, 80)
 shape = SubResource("RectangleShape2D_cjs1c")
 
-[connection signal="body_entered" from="door1/checking" to="door1" method="_on_checking_body_entered"]
 [connection signal="body_entered" from="door1/checking" to="." method="_on_checking_body_entered"]
+[connection signal="body_entered" from="door1/checking" to="door1" method="_on_checking_body_entered"]
