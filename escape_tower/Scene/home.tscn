@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://cjsil4fnc5dj7"]
+[gd_scene load_steps=76 format=4 uid="uid://cjsil4fnc5dj7"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_ts22p"]
 [ext_resource type="Texture2D" uid="uid://dtydlcqts7j81" path="res://Assets/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="2_50ac4"]
@@ -20,8 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://c23gyh6jlj1w0" path="res://Character/player.tscn" id="16_yyru8"]
 [ext_resource type="PackedScene" uid="uid://q2mup5emownd" path="res://Scene/elevator.tscn" id="18_ja7i2"]
 [ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="19_dskgt"]
+[ext_resource type="Texture2D" uid="uid://dui2dljjafobc" path="res://Assets/items/fire circle-Sheet.png" id="20_efsyl"]
 [ext_resource type="PackedScene" uid="uid://bhfehbbidun6c" path="res://Scene/homedoor.tscn" id="24_t7jsr"]
-[ext_resource type="Texture2D" uid="uid://c7e6pufkopaa2" path="res://fire 1.png" id="26_642u7"]
 [ext_resource type="Script" path="res://Scene/fire.gd" id="27_26icx"]
 [ext_resource type="PackedScene" uid="uid://buv8po1vhf362" path="res://Scene/door_exit.tscn" id="28_7aeq4"]
 
@@ -18135,6 +18135,56 @@ sources/0 = SubResource("TileSetAtlasSource_x83ay")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_so0rh"]
 size = Vector2(22, 160)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wydho"]
+atlas = ExtResource("20_efsyl")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ep0"]
+atlas = ExtResource("20_efsyl")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp1m5"]
+atlas = ExtResource("20_efsyl")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riato"]
+atlas = ExtResource("20_efsyl")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51eej"]
+atlas = ExtResource("20_efsyl")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4xtn"]
+atlas = ExtResource("20_efsyl")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpymp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wydho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3ep0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp1m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_riato")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51eej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4xtn")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 8.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_wyaws"]
 radius = 795.774
 
@@ -18150,6 +18200,7 @@ offset_top = 183.0
 offset_right = 716.0
 offset_bottom = 206.0
 text = "2F"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 z_index = 1
@@ -18158,6 +18209,7 @@ offset_top = -42.0
 offset_right = 572.0
 offset_bottom = -19.0
 text = "3F"
+metadata/_edit_use_anchors_ = true
 
 [node name="rooms" type="Node" parent="."]
 
@@ -18290,14 +18342,20 @@ polygon = PackedVector2Array(676, -160, 676, -80, 532, -81, 533, -34, 676, -35, 
 z_index = 2
 position = Vector2(-37, 45)
 
-[node name="Fire" type="Sprite2D" parent="player"]
+[node name="Fire" type="AnimatedSprite2D" parent="player"]
 z_index = 1
 position = Vector2(0, 2)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("26_642u7")
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_fpymp")
+animation = &"fire"
+autoplay = "fire"
+frame = 2
+frame_progress = 0.468744
 script = ExtResource("27_26icx")
 
 [node name="Area2D" type="Area2D" parent="player/Fire"]
+position = Vector2(-2, -8)
+scale = Vector2(0.1, 0.1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/Fire/Area2D"]
 shape = SubResource("CircleShape2D_wyaws")
