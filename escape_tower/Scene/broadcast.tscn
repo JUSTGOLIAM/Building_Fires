@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbb6a816npp2n"]
+
+[ext_resource type="Texture2D" uid="uid://dwth5xd4yay44" path="res://Assets/UI/Modern_UI_Style_1.png" id="1_e8kps"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufk52"]
+atlas = ExtResource("1_e8kps")
+region = Rect2(512, 656, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehyoj"]
+atlas = ExtResource("1_e8kps")
+region = Rect2(528, 656, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifpcx"]
+atlas = ExtResource("1_e8kps")
+region = Rect2(544, 656, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbw8j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufk52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehyoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifpcx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="broadcast" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cbw8j")
+autoplay = "default"
+frame_progress = 0.177935

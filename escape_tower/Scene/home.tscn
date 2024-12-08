@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="19_dskgt"]
 [ext_resource type="Texture2D" uid="uid://dui2dljjafobc" path="res://Assets/items/fire circle-Sheet.png" id="20_efsyl"]
 [ext_resource type="PackedScene" uid="uid://bhfehbbidun6c" path="res://Scene/homedoor.tscn" id="24_t7jsr"]
-[ext_resource type="Script" path="res://Scene/fire.gd" id="27_26icx"]
+[ext_resource type="Script" path="res://Script/fire.gd" id="27_26icx"]
 [ext_resource type="PackedScene" uid="uid://buv8po1vhf362" path="res://Scene/door_exit.tscn" id="28_7aeq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3iswp"]

@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dfdq6iupoek7w" path="res://Assets/Furniture/13_Conference_Hall_16x16.png" id="21_pel8h"]
 [ext_resource type="Texture2D" uid="uid://dodrxxh0glk5h" path="res://Assets/Furniture/18_Jail_16x16.png" id="22_gac37"]
 [ext_resource type="Texture2D" uid="uid://dr3f5bow4c01" path="res://Assets/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="23_avf5m"]
-[ext_resource type="PackedScene" uid="uid://bpvt0la4oy0p7" path="res://Scene/towel.tscn" id="25_dmnya"]
+[ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="25_dmnya"]
 [ext_resource type="PackedScene" uid="uid://c23gyh6jlj1w0" path="res://Character/player.tscn" id="26_mta6p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3iswp"]
