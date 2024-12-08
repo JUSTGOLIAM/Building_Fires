@@ -24,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 metadata/_edit_horizontal_guides_ = [5.0, 15.0]
 metadata/_edit_vertical_guides_ = [23.0, 111.0, 123.0]
 
