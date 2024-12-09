@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=4 uid="uid://cjsil4fnc5dj7"]
+[gd_scene load_steps=91 format=4 uid="uid://cjsil4fnc5dj7"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_ts22p"]
 [ext_resource type="Shader" path="res://Scene/Smoke_2.gdshader" id="1_vk7ki"]
@@ -18,16 +18,18 @@
 [ext_resource type="Texture2D" uid="uid://db3bjw2bok0w0" path="res://Assets/Furniture/19_Hospital_16x16.png" id="13_aqeqp"]
 [ext_resource type="Texture2D" uid="uid://dodrxxh0glk5h" path="res://Assets/Furniture/18_Jail_16x16.png" id="14_8qsvm"]
 [ext_resource type="Texture2D" uid="uid://dr3f5bow4c01" path="res://Assets/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="15_xkg82"]
-[ext_resource type="PackedScene" uid="uid://c23gyh6jlj1w0" path="res://Character/player.tscn" id="16_yyru8"]
 [ext_resource type="PackedScene" uid="uid://q2mup5emownd" path="res://Scene/elevator.tscn" id="18_ja7i2"]
 [ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="19_dskgt"]
 [ext_resource type="Texture2D" uid="uid://dui2dljjafobc" path="res://Assets/items/fire circle-Sheet.png" id="20_efsyl"]
+[ext_resource type="PackedScene" uid="uid://cgtlq5txyjlst" path="res://Character/player_ tutorial.tscn" id="21_fojcs"]
 [ext_resource type="PackedScene" uid="uid://bhfehbbidun6c" path="res://Scene/homedoor.tscn" id="24_t7jsr"]
 [ext_resource type="Shader" path="res://Scene/Smoke.gdshader" id="25_yxtit"]
 [ext_resource type="Texture2D" uid="uid://ekop8nvxtapc" path="res://Scene/Smoke Cloud Animation0200.png" id="26_w3ebm"]
 [ext_resource type="Script" path="res://Script/fire.gd" id="27_26icx"]
 [ext_resource type="PackedScene" uid="uid://buv8po1vhf362" path="res://Scene/door_exit.tscn" id="28_7aeq4"]
 [ext_resource type="Shader" path="res://Scene/Some_code.gdshader" id="28_xhs26"]
+[ext_resource type="PackedScene" uid="uid://43vsn6sx11e2" path="res://Scene/next/win.tscn" id="29_upcyf"]
+[ext_resource type="PackedScene" uid="uid://cq1c5gajwmvmj" path="res://Scene/next/tutorial_win.tscn" id="30_rytvu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgjl7"]
 texture = ExtResource("1_ts22p")
@@ -18432,8 +18434,7 @@ polygon = PackedVector2Array(682, -160, 682, -209, -115, -209, -115, 243, 499, 2
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wall_CollisionShade"]
 polygon = PackedVector2Array(676, -160, 676, -80, 532, -81, 533, -34, 676, -35, 678, 148, 677, 189, 820, 189, 821, 414, 957, 414, 957, 576, 643, 575, 644, 414, 764, 414, 781, 414, 787, 414, 787, 367, 643, 367, 644, 142, 499, 142, 499, 190, 617, 189, 613, 650, 1000, 649, 998, 358, 834, 357, 837, 120, 699, 117, 702, -160)
 
-[node name="player" parent="." instance=ExtResource("16_yyru8")]
-z_index = 2
+[node name="player" parent="." instance=ExtResource("21_fojcs")]
 position = Vector2(-37, 45)
 
 [node name="Fire" type="AnimatedSprite2D" parent="player"]
@@ -18460,6 +18461,7 @@ position = Vector2(-87, 38)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 2
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(576, 324)
@@ -18484,11 +18486,17 @@ texture = SubResource("NoiseTexture2D_gvdyb")
 offset = Vector2(0.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_syi0g")
 position = Vector2(698, 105)
 scale = Vector2(5.23, 5.23)
 texture = SubResource("NoiseTexture2D_8w03c")
+
+[node name="win" parent="." instance=ExtResource("29_upcyf")]
+position = Vector2(802, 583)
+scale = Vector2(10.0874, 1.57284)
+nextScene = ExtResource("30_rytvu")
 
 [connection signal="playermoved" from="player" to="player/Fire" method="_on_player_playermoved"]
 [connection signal="body_exited" from="player/Fire/Area2D" to="player/Fire" method="_on_area_2d_body_exited"]

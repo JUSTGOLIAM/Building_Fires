@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://43vsn6sx11e2"]
+
+[ext_resource type="Script" path="res://Script/win.gd" id="1_jot6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpqia"]
+
+[node name="win" type="Area2D"]
+script = ExtResource("1_jot6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fpqia")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

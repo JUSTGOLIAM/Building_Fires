@@ -20,4 +20,5 @@ func _on_player_playermoved() -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "player":
 		print ("die die die")
+		get_tree().change_scene_to_file("res://Scene/next/dead_tutorial.tscn")
 	

@@ -1,20 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://vayvc6vv2rrb"]
+[gd_scene load_steps=8 format=3 uid="uid://bjqond34g24pl"]
 
-[ext_resource type="Theme" uid="uid://pwo4m4x3owuu" path="res://Assets/UI/new_theme.tres" id="1_xtt45"]
-[ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="2_2r786"]
-[ext_resource type="PackedScene" uid="uid://bbb6a816npp2n" path="res://Scene/broadcast.tscn" id="3_bo4ro"]
-[ext_resource type="Texture2D" uid="uid://dwth5xd4yay44" path="res://Assets/UI/Modern_UI_Style_1.png" id="4_p0v5k"]
+[ext_resource type="Theme" uid="uid://pwo4m4x3owuu" path="res://Assets/UI/new_theme.tres" id="1_f1q6j"]
+[ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="2_5ic0d"]
+[ext_resource type="PackedScene" uid="uid://bbb6a816npp2n" path="res://Scene/broadcast.tscn" id="3_t1h42"]
+[ext_resource type="Texture2D" uid="uid://dwth5xd4yay44" path="res://Assets/UI/Modern_UI_Style_1.png" id="4_rbkaa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3unk7"]
-atlas = ExtResource("4_p0v5k")
+atlas = ExtResource("4_rbkaa")
 region = Rect2(100, 4, 7, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xghnh"]
-atlas = ExtResource("4_p0v5k")
+atlas = ExtResource("4_rbkaa")
 region = Rect2(404, 309, 8, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5db3w"]
-atlas = ExtResource("4_p0v5k")
+atlas = ExtResource("4_rbkaa")
 region = Rect2(484, 327, 8, 4)
 
 [node name="Info_2" type="Control"]
@@ -32,7 +32,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Panel" type="Panel" parent="MarginContainer3"]
 layout_mode = 2
-theme = ExtResource("1_xtt45")
+theme = ExtResource("1_f1q6j")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer3"]
 layout_mode = 2
@@ -58,11 +58,10 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.517647, 0.298039, 0.0980392, 1)
 theme_override_constants/line_spacing = 2
-theme_override_fonts/font = ExtResource("2_2r786")
+theme_override_fonts/font = ExtResource("2_5ic0d")
 theme_override_font_sizes/font_size = 8
-text = "There's a fire!
-You live on the 4th floor!
-The fire broke out on the 7th floor!"
+text = "This is a fire drill!
+You live on the 3rd floor"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
@@ -70,9 +69,9 @@ layout_mode = 2
 
 [node name="Panel2" type="Panel" parent="MarginContainer3/MarginContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("1_xtt45")
+theme = ExtResource("1_f1q6j")
 
-[node name="broadcast" parent="MarginContainer3/MarginContainer/HBoxContainer/MarginContainer" instance=ExtResource("3_bo4ro")]
+[node name="broadcast" parent="MarginContainer3/MarginContainer/HBoxContainer/MarginContainer" instance=ExtResource("3_t1h42")]
 position = Vector2(14.88, 14.54)
 
 [node name="TextureRect" type="TextureRect" parent="."]
