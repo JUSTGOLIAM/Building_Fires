@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3nui0k4pnpv7"]
+[gd_scene load_steps=7 format=3 uid="uid://b3nui0k4pnpv7"]
 
 [ext_resource type="Script" path="res://Script/opening.gd" id="1_kh3n2"]
 [ext_resource type="Texture2D" uid="uid://epelg6mw2vef" path="res://Assets/Ending/deadend1.png" id="2_gjqib"]
 [ext_resource type="FontFile" uid="uid://qccqn5puw4gx" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_d0kti"]
+[ext_resource type="Theme" uid="uid://dcsfl1wle774g" path="res://Assets/Styles/theme.tres" id="3_mrqce"]
 [ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="4_077hy"]
 
 [sub_resource type="Theme" id="Theme_xw43f"]
@@ -45,6 +46,7 @@ theme = SubResource("Theme_xw43f")
 [node name="play" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_mrqce")
 theme_override_fonts/font = ExtResource("3_d0kti")
 text = "Try again"
 
