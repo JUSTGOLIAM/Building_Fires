@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dr3f5bow4c01" path="res://Assets/Room_Builder_subfiles/Room_Builder_borders_16x16.png" id="18_we4n1"]
 [ext_resource type="PackedScene" uid="uid://c23gyh6jlj1w0" path="res://Character/player.tscn" id="19_faovo"]
 [ext_resource type="Texture2D" uid="uid://dui2dljjafobc" path="res://Assets/items/fire circle-Sheet.png" id="20_dg7n3"]
-[ext_resource type="Script" path="res://Script/fire.gd" id="21_fatee"]
+[ext_resource type="Script" path="res://Scene/fire_level1.gd" id="21_ku82f"]
 [ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="22_20nih"]
 [ext_resource type="PackedScene" uid="uid://buv8po1vhf362" path="res://Scene/door_exit.tscn" id="23_pnfl8"]
 [ext_resource type="PackedScene" uid="uid://bhfehbbidun6c" path="res://Scene/homedoor.tscn" id="24_cysus"]
@@ -18439,7 +18439,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_i82l0")
 animation = &"fire"
 autoplay = "fire"
-script = ExtResource("21_fatee")
+script = ExtResource("21_ku82f")
 
 [node name="Area2D" type="Area2D" parent="player/Fire"]
 position = Vector2(-2, -8)

@@ -18464,7 +18464,6 @@ position = Vector2(-87, 38)
 layer = 2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_mirroring = Vector2(576, 324)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
@@ -18488,6 +18487,7 @@ texture = SubResource("NoiseTexture2D_gvdyb")
 offset = Vector2(0.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_syi0g")
 position = Vector2(698, 105)
