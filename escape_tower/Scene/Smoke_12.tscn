@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://de7tckrpy4sfi"]
+
+[ext_resource type="Shader" path="res://Scene/Smoke_2.gdshader" id="1_4wvew"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abses"]
+shader = ExtResource("1_4wvew")
+shader_parameter/colorMode = 0
+shader_parameter/color = null
+shader_parameter/timescale = 0.1
+shader_parameter/hScrollSpeedFactor = 1.0
+shader_parameter/vScrollSpeedFactor = 1.0
+shader_parameter/entropyFactor = 1.0
+shader_parameter/sharpness = 2.0
+
+[node name="Smoke2" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 648)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+material = SubResource("ShaderMaterial_abses")
+offset_left = -960.0
+offset_top = -432.0
+offset_right = 192.0
+offset_bottom = 216.0
+color = Color(0.604236, 0.511386, 0.512692, 0.521569)
