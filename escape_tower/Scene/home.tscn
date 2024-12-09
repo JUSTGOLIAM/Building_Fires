@@ -18243,6 +18243,7 @@ shader_parameter/fireAlpha = 0.4
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ra7cq"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8w03c"]
+seamless = true
 color_ramp = SubResource("Gradient_437k6")
 noise = SubResource("FastNoiseLite_ra7cq")
 
@@ -18461,9 +18462,9 @@ position = Vector2(-87, 38)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 2
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_mirroring = Vector2(576, 324)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
@@ -18476,6 +18477,7 @@ color = Color(0.145462, 0.0238683, 6.01634e-09, 0.807843)
 metadata/_edit_use_anchors_ = true
 
 [node name="Noise_Background" type="Sprite2D" parent="."]
+visible = false
 light_mask = 2
 visibility_layer = 2
 z_index = -1
@@ -18486,7 +18488,6 @@ texture = SubResource("NoiseTexture2D_gvdyb")
 offset = Vector2(0.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_syi0g")
 position = Vector2(698, 105)
