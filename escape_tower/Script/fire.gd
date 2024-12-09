@@ -5,8 +5,8 @@ extends AnimatedSprite2D
 func _ready() -> void:
 	pass # Replace with function body.
 func firegwrowth():
-	scale.x-=0.005
-	scale.y-=0.005
+	scale.x-=0.004
+	scale.y-=0.004
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,5 +18,6 @@ func _on_player_playermoved() -> void:
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	print ("die die die")
+	if body.name == "player":
+		print ("die die die")
 	
