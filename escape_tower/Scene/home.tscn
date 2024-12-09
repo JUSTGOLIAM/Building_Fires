@@ -18208,11 +18208,11 @@ shader_parameter/vScrollSpeedFactor = 0.06
 shader_parameter/entropyFactor = 1.0
 shader_parameter/sharpness = 10.0
 
-[sub_resource type="Gradient" id="Gradient_x8ool"]
+[sub_resource type="Gradient" id="Gradient_dfs0n"]
 offsets = PackedFloat32Array(0, 0.672078, 0.74026)
 colors = PackedColorArray(0, 0, 0, 1, 0.839216, 0, 0.133333, 1, 0.940469, 0.710055, 0, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_tu70s"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2nlrd"]
 noise_type = 0
 seed = 4
 offset = Vector3(3, 3, 3)
@@ -18221,8 +18221,8 @@ fractal_gain = 0.48
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gvdyb"]
 generate_mipmaps = false
-color_ramp = SubResource("Gradient_x8ool")
-noise = SubResource("FastNoiseLite_tu70s")
+color_ramp = SubResource("Gradient_dfs0n")
+noise = SubResource("FastNoiseLite_2nlrd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_syi0g"]
 shader = ExtResource("28_xhs26")
@@ -18236,13 +18236,13 @@ shader_parameter/alphaFactor = 0.3
 shader_parameter/fireIntensity = 0.5
 shader_parameter/fireAlpha = 0.4
 
-[sub_resource type="Gradient" id="Gradient_qjgoy"]
+[sub_resource type="Gradient" id="Gradient_437k6"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_tp6sl"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ra7cq"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8w03c"]
-color_ramp = SubResource("Gradient_qjgoy")
-noise = SubResource("FastNoiseLite_tp6sl")
+color_ramp = SubResource("Gradient_437k6")
+noise = SubResource("FastNoiseLite_ra7cq")
 
 [node name="Home" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [144.0]
@@ -18471,6 +18471,7 @@ offset_top = -565.0
 offset_right = 910.0
 offset_bottom = 83.0
 color = Color(0.145462, 0.0238683, 6.01634e-09, 0.807843)
+metadata/_edit_use_anchors_ = true
 
 [node name="Noise_Background" type="Sprite2D" parent="."]
 light_mask = 2
@@ -18485,7 +18486,7 @@ offset = Vector2(0.2, 0)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 material = SubResource("ShaderMaterial_syi0g")
-position = Vector2(715, 128)
+position = Vector2(698, 105)
 scale = Vector2(5.23, 5.23)
 texture = SubResource("NoiseTexture2D_8w03c")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://ns4b62urgixj"]
+[gd_scene load_steps=89 format=4 uid="uid://ns4b62urgixj"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_03uy8"]
 [ext_resource type="Texture2D" uid="uid://bglra3ql0c3hu" path="res://Assets/Furniture/14_Basement_16x16.png" id="2_g6j5p"]
@@ -24,6 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="22_20nih"]
 [ext_resource type="PackedScene" uid="uid://buv8po1vhf362" path="res://Scene/door_exit.tscn" id="23_pnfl8"]
 [ext_resource type="PackedScene" uid="uid://bhfehbbidun6c" path="res://Scene/homedoor.tscn" id="24_cysus"]
+[ext_resource type="Shader" path="res://Scene/Smoke.gdshader" id="25_ufq3k"]
+[ext_resource type="Texture2D" uid="uid://ekop8nvxtapc" path="res://Scene/Smoke Cloud Animation0200.png" id="26_dbxj8"]
+[ext_resource type="Shader" path="res://Scene/Smoke_2.gdshader" id="27_avy2u"]
+[ext_resource type="Shader" path="res://Scene/Some_code.gdshader" id="28_jom4e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4pi3"]
 texture = ExtResource("1_03uy8")
@@ -18188,6 +18192,58 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ofa3e"]
 radius = 795.774
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vlyn"]
+shader = ExtResource("25_ufq3k")
+shader_parameter/density = 0.18
+shader_parameter/speed = Vector2(0.06, 0.06)
+shader_parameter/noise_texture = ExtResource("26_dbxj8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ldpg"]
+shader = ExtResource("27_avy2u")
+shader_parameter/colorMode = 0
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/timescale = 0.06
+shader_parameter/hScrollSpeedFactor = 0.06
+shader_parameter/vScrollSpeedFactor = 0.06
+shader_parameter/entropyFactor = 1.0
+shader_parameter/sharpness = 10.0
+
+[sub_resource type="Gradient" id="Gradient_x8ool"]
+offsets = PackedFloat32Array(0, 0.672078, 0.74026)
+colors = PackedColorArray(0, 0, 0, 1, 0.839216, 0, 0.133333, 1, 0.940469, 0.710055, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tu70s"]
+noise_type = 0
+seed = 4
+offset = Vector3(3, 3, 3)
+fractal_octaves = 10
+fractal_gain = 0.48
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wpmwp"]
+generate_mipmaps = false
+color_ramp = SubResource("Gradient_x8ool")
+noise = SubResource("FastNoiseLite_tu70s")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7c0rh"]
+shader = ExtResource("28_jom4e")
+shader_parameter/colorMode = 0
+shader_parameter/timescale = 0.07
+shader_parameter/hScrollSpeedFactor = 0.18
+shader_parameter/vScrollSpeedFactor = 0.18
+shader_parameter/entropyFactor = 0.36
+shader_parameter/sharpness = 10.0
+shader_parameter/alphaFactor = 0.3
+shader_parameter/fireIntensity = 0.5
+shader_parameter/fireAlpha = 0.4
+
+[sub_resource type="Gradient" id="Gradient_qjgoy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tp6sl"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dpuwc"]
+color_ramp = SubResource("Gradient_qjgoy")
+noise = SubResource("FastNoiseLite_tp6sl")
+
 [node name="level1" type="Node2D"]
 
 [node name="Node" type="Node" parent="."]
@@ -18422,6 +18478,38 @@ scale = Vector2(0.6875, 0.590278)
 z_index = 1
 position = Vector2(-88, -24.5)
 scale = Vector2(0.40625, 0.53125)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+material = SubResource("ShaderMaterial_0vlyn")
+offset_left = -242.0
+offset_top = -565.0
+offset_right = 910.0
+offset_bottom = 83.0
+color = Color(0.145462, 0.0238683, 6.01634e-09, 0.807843)
+metadata/_edit_use_anchors_ = true
+
+[node name="Noise_Background" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = -1
+material = SubResource("ShaderMaterial_6ldpg")
+position = Vector2(690, 104)
+scale = Vector2(5.23, 5.23)
+texture = SubResource("NoiseTexture2D_wpmwp")
+offset = Vector2(0.2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_7c0rh")
+position = Vector2(698, 105)
+scale = Vector2(5.23, 5.23)
+texture = SubResource("NoiseTexture2D_dpuwc")
 
 [connection signal="playermoved" from="player" to="player/Fire" method="_on_player_playermoved"]
 [connection signal="body_exited" from="player/Fire/Area2D" to="player/Fire" method="_on_area_2d_body_exited"]
