@@ -18486,7 +18486,7 @@ offset = Vector2(0.2, 0)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 material = SubResource("ShaderMaterial_syi0g")
-position = Vector2(690, 104)
+position = Vector2(715, 128)
 scale = Vector2(5.23, 5.23)
 texture = SubResource("NoiseTexture2D_8w03c")
 

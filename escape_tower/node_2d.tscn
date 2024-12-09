@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmugc3ovmhumv"]
+
+[ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="1_c7vot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fih7q"]
+radius = 10.0499
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hffu"]
+bg_color = Color(0.815686, 0.745098, 0.611765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d257w"]
+font_color = Color(0.517647, 0.298039, 0.0980392, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_fih7q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_right = 1052.0
+offset_bottom = 59.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hffu")
+
+[node name="Text" type="Label" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.517647, 0.298039, 0.0980392, 1)
+theme_override_fonts/font = ExtResource("1_c7vot")
+text = "Fire Drill - I have a prepared wet towel (in the area near the spawn point)."
+label_settings = SubResource("LabelSettings_d257w")
