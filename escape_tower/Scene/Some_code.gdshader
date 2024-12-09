@@ -62,7 +62,7 @@ vec4 mainImage(in vec2 _uv)
                    TIME * timescale * 0.5 * entropyFactor);
 
     // Generate noise for smoke
-    float noise = 
+    float noise =
             (shard_noise(128.0 * uv, sharpness) * 0.03125) +
             (shard_noise(64.0 * uv, sharpness) * 0.0625) +
             (shard_noise(32.0 * uv, sharpness) * 0.125) +

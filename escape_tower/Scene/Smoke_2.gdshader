@@ -1,13 +1,13 @@
 shader_type canvas_item;
 
-uniform uint colorMode = 0; 
+uniform uint colorMode = 0;
 
 uniform vec4 color : source_color;
-uniform float timescale = 0.2; 
-uniform float hScrollSpeedFactor = 1.; 
+uniform float timescale = 0.2;
+uniform float hScrollSpeedFactor = 1.;
 uniform float vScrollSpeedFactor = 1.;
-uniform float entropyFactor = 1.; 
-uniform float sharpness = 10.; 
+uniform float entropyFactor = 1.;
+uniform float sharpness = 10.;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
@@ -56,24 +56,24 @@ vec4 mainImage( in vec2 _uv )
 {
     vec3 uv = vec3(_uv.x + TIME*timescale*hScrollSpeedFactor, _uv.y + TIME*timescale*vScrollSpeedFactor, TIME*timescale * .5 * entropyFactor);
 
-float noise = 
+float noise =
         (shard_noise(512.0*uv,sharpness) * .03125) + // 增加频率
         (shard_noise(256.0*uv,sharpness) * .0625) +
         (shard_noise(128.0*uv,sharpness) * .125) +
         (shard_noise(64.0*uv,sharpness) * .25) +
         (shard_noise(32.0*uv,sharpness) * .5);
 
-    
+
     // Map the noise to fire colors
     vec3 fire_color = fire_gradient(noise);
 
     return vec4(fire_color, 1.0); // Return fire colors with full alpha
 }
 
-void fragment() 
+void fragment()
 {
     vec4 noise = mainImage(UV);
-    
+
     switch (colorMode)
     {
         case 0:
