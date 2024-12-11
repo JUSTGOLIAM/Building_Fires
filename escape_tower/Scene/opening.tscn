@@ -31,30 +31,25 @@ position = Vector2(12.6586, 25.956)
 scale = Vector2(0.115163, 0.103162)
 texture = ExtResource("2_kej8l")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 15.5292
-offset_top = 26.9309
-offset_right = 79.5292
-offset_bottom = 78.9309
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.137291, 0.21204)
-
-[node name="play" type="Button" parent="Panel/VBoxContainer"]
+[node name="play" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 14.5954
+offset_top = 24.8593
+offset_right = 74.5954
+offset_bottom = 44.8593
+scale = Vector2(0.159538, 0.255229)
 size_flags_horizontal = 8
 theme = ExtResource("4_4064e")
 theme_override_fonts/font = ExtResource("3_h5dmu")
 text = "PLAY"
 
-[node name="Exit" type="Button" parent="Panel/VBoxContainer"]
+[node name="Exit" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 14.9067
+offset_top = 31.6224
+offset_right = 78.9067
+offset_bottom = 55.6224
+scale = Vector2(0.149836, 0.24767)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("3_h5dmu")
 text = "EXIT"
@@ -72,5 +67,5 @@ theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_1rcg5")
 text = "Get Down, Stay Cool"
 
-[connection signal="pressed" from="Panel/VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]
