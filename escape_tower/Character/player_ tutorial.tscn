@@ -1,11 +1,11 @@
-[gd_scene load_steps=58 format=3 uid="uid://cgtlq5txyjlst"]
+[gd_scene load_steps=58 format=3 uid="uid://yg1sr7hiajbk"]
 
 [ext_resource type="Script" path="res://Script/player.gd" id="1_pkbhy"]
 [ext_resource type="Texture2D" uid="uid://cbnw4i8xwy5xb" path="res://Assets/Character/Kid_Abby_idle_anim_16x16.png" id="2_kpv3f"]
 [ext_resource type="Texture2D" uid="uid://4fkoi6kyy0pe" path="res://Assets/Character/kid_Abby_run_16x16.png" id="3_e5d6o"]
-[ext_resource type="PackedScene" uid="uid://bjqond34g24pl" path="res://Scene/info_3.tscn" id="4_bub2a"]
+[ext_resource type="PackedScene" path="res://Scene/info_3.tscn" id="4_bub2a"]
 [ext_resource type="PackedScene" uid="uid://bfpuv7m24si2q" path="res://Scene/goal.tscn" id="5_ab12l"]
-[ext_resource type="PackedScene" uid="uid://ddcbuyi1acc61" path="res://Scene/tutorial.tscn" id="6_462st"]
+[ext_resource type="PackedScene" uid="uid://dqvbpc3s5bjbu" path="res://Scene/tutorial.tscn" id="6_462st"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4qs6"]
 atlas = ExtResource("2_kpv3f")

@@ -13,8 +13,8 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 vec3 hash(vec3 p)
 {
-    p = vec3(dot(p, vec3(127.1, 311.7, 74.7)), 
-             dot(p, vec3(269.5, 183.3, 246.1)), 
+    p = vec3(dot(p, vec3(127.1, 311.7, 74.7)),
+             dot(p, vec3(269.5, 183.3, 246.1)),
              dot(p, vec3(113.5, 271.9, 124.6)));
     p = fract(sin(p) * 43758.5453123);
     return p;
@@ -54,8 +54,8 @@ vec3 fire_gradient(float t) {
 
 vec4 mainImage(in vec2 _uv)
 {
-    vec3 uv = vec3(_uv.x + TIME * timescale * hScrollSpeedFactor, 
-                   _uv.y + TIME * timescale * vScrollSpeedFactor, 
+    vec3 uv = vec3(_uv.x + TIME * timescale * hScrollSpeedFactor,
+                   _uv.y + TIME * timescale * vScrollSpeedFactor,
                    TIME * timescale * 0.5 * entropyFactor);
 
     float noise =

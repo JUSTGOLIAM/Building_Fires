@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://q2mup5emownd" path="res://Scene/elevator.tscn" id="18_ja7i2"]
 [ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="19_dskgt"]
 [ext_resource type="Texture2D" uid="uid://dui2dljjafobc" path="res://Assets/items/fire circle-Sheet.png" id="20_efsyl"]
-[ext_resource type="PackedScene" uid="uid://cgtlq5txyjlst" path="res://Character/player_ tutorial.tscn" id="21_fojcs"]
+[ext_resource type="PackedScene" uid="uid://yg1sr7hiajbk" path="res://Character/player_ tutorial.tscn" id="21_fojcs"]
 [ext_resource type="PackedScene" uid="uid://bhfehbbidun6c" path="res://Scene/homedoor.tscn" id="24_t7jsr"]
 [ext_resource type="Shader" path="res://Scene/Smoke.gdshader" id="25_yxtit"]
 [ext_resource type="Texture2D" uid="uid://ekop8nvxtapc" path="res://Scene/Smoke Cloud Animation0200.png" id="26_w3ebm"]
@@ -18468,10 +18468,10 @@ motion_mirroring = Vector2(576, 324)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
 material = SubResource("ShaderMaterial_gppof")
-offset_left = -242.0
-offset_top = -565.0
-offset_right = 910.0
-offset_bottom = 83.0
+offset_left = -240.0
+offset_top = -559.0
+offset_right = 912.0
+offset_bottom = 89.0
 color = Color(0.145462, 0.0238683, 6.01634e-09, 0.807843)
 metadata/_edit_use_anchors_ = true
 

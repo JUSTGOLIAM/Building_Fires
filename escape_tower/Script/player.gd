@@ -4,6 +4,9 @@ signal playermoved
 
 const SPEED = 200.0
 var current_dir = "none"
+var holdingtowel=false
+
+
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -80,4 +83,7 @@ func play_anim(movement):
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("item")
+	print(area)
+	if area.name=="Towel":
+		print("Towel Collected")
+		holdingtowel=true
