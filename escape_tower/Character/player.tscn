@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vayvc6vv2rrb" path="res://Scene/info.tscn" id="2_yul4u"]
 [ext_resource type="Texture2D" uid="uid://4fkoi6kyy0pe" path="res://Assets/Character/kid_Abby_run_16x16.png" id="3_ltxpm"]
 [ext_resource type="PackedScene" uid="uid://bfpuv7m24si2q" path="res://Scene/goal.tscn" id="5_p0ago"]
-[ext_resource type="PackedScene" uid="uid://dqvbpc3s5bjbu" path="res://Scene/tutorial.tscn" id="6_do7n8"]
+[ext_resource type="PackedScene" uid="uid://ddcbuyi1acc61" path="res://Scene/tutorial.tscn" id="6_do7n8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4qs6"]
 atlas = ExtResource("1_qjy6y")

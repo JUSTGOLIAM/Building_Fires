@@ -87,3 +87,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name=="Towel":
 		print("Towel Collected")
 		holdingtowel=true
+
+
+func _on_playermoved() -> void:
+	pass # Replace with function body.

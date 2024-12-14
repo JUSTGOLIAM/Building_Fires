@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxojjfltxhdn0"]
 
-[ext_resource type="Script" path="res://Script/opening.gd" id="1_u6he1"]
+[ext_resource type="Script" path="res://Scene/opening2.gd" id="1_qeu83"]
 [ext_resource type="Texture2D" uid="uid://dte0cjko72854" path="res://Assets/items/background.png" id="2_24uw2"]
 [ext_resource type="Texture2D" uid="uid://vyfy83h0pfo5" path="res://Assets/items/background_Town2.png" id="2_kej8l"]
 [ext_resource type="FontFile" uid="uid://qccqn5puw4gx" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_h5dmu"]
@@ -10,7 +10,7 @@
 [node name="opening" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_u6he1")
+script = ExtResource("1_qeu83")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
