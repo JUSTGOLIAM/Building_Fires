@@ -26,6 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 270.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
@@ -76,6 +77,7 @@ theme = ExtResource("1_vrwbl")
 position = Vector2(16, 16)
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 3.0
 offset_right = 27.0
@@ -84,6 +86,7 @@ scale = Vector2(0.6, 0.6)
 texture = SubResource("AtlasTexture_bj3vi")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 126.0
 offset_top = 17.0
 offset_right = 133.0
@@ -93,6 +96,7 @@ scale = Vector2(0.6, 0.6)
 texture = SubResource("AtlasTexture_bj3vi")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 3.0
 offset_right = 136.0
@@ -101,6 +105,7 @@ scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_30n72")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 15.0
 offset_right = 136.0
