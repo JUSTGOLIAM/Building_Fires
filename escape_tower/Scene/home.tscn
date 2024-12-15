@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://cjsil4fnc5dj7"]
+[gd_scene load_steps=97 format=4 uid="uid://cjsil4fnc5dj7"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_ts22p"]
 [ext_resource type="Shader" path="res://Scene/Smoke_2.gdshader" id="1_vk7ki"]
@@ -22,7 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://qlny7kp5vpwl" path="res://Scene/Towel.tscn" id="19_dskgt"]
 [ext_resource type="Texture2D" uid="uid://dui2dljjafobc" path="res://Assets/items/fire circle-Sheet.png" id="20_efsyl"]
 [ext_resource type="PackedScene" uid="uid://yg1sr7hiajbk" path="res://Character/player_ tutorial.tscn" id="21_fojcs"]
+[ext_resource type="PackedScene" uid="uid://bi7874ju3mb5a" path="res://Dialogue.tscn" id="24_enu8i"]
 [ext_resource type="PackedScene" uid="uid://bhfehbbidun6c" path="res://Scene/homedoor.tscn" id="24_t7jsr"]
+[ext_resource type="Script" path="res://Script/Towel.gd" id="25_tmqm0"]
 [ext_resource type="Shader" path="res://Scene/Smoke.gdshader" id="25_yxtit"]
 [ext_resource type="Texture2D" uid="uid://ekop8nvxtapc" path="res://Scene/Smoke Cloud Animation0200.png" id="26_w3ebm"]
 [ext_resource type="Script" path="res://Script/fire.gd" id="27_26icx"]
@@ -30,6 +32,9 @@
 [ext_resource type="Shader" path="res://Scene/Some_code.gdshader" id="28_xhs26"]
 [ext_resource type="PackedScene" uid="uid://43vsn6sx11e2" path="res://Scene/next/win.tscn" id="29_upcyf"]
 [ext_resource type="PackedScene" uid="uid://cq1c5gajwmvmj" path="res://Scene/next/tutorial_win.tscn" id="30_rytvu"]
+[ext_resource type="PackedScene" uid="uid://dbp4qx7e6macr" path="res://dialogue_door.tscn" id="33_6k5be"]
+[ext_resource type="PackedScene" uid="uid://b4kwgd6qjd7l7" path="res://dialogue_elevator.tscn" id="34_feyb3"]
+[ext_resource type="PackedScene" uid="uid://dqp07hkexso6x" path="res://dialogue_window.tscn" id="34_kt53q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgjl7"]
 texture = ExtResource("1_ts22p")
@@ -18194,6 +18199,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_wyaws"]
 radius = 795.774
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ap50r"]
+radius = 6.08276
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gppof"]
 shader = ExtResource("25_yxtit")
 shader_parameter/density = 0.18
@@ -18435,10 +18443,10 @@ polygon = PackedVector2Array(682, -160, 682, -209, -115, -209, -115, 243, 499, 2
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wall_CollisionShade"]
 polygon = PackedVector2Array(676, -160, 676, -80, 532, -81, 533, -34, 676, -35, 678, 148, 677, 189, 820, 189, 821, 414, 957, 414, 957, 576, 643, 575, 644, 414, 764, 414, 781, 414, 787, 414, 787, 367, 643, 367, 644, 142, 499, 142, 499, 190, 617, 189, 613, 650, 1000, 649, 998, 358, 834, 357, 837, 120, 699, 117, 702, -160)
 
-[node name="player" parent="." instance=ExtResource("21_fojcs")]
-position = Vector2(-37, 45)
+[node name="player_ tutorial" parent="." instance=ExtResource("21_fojcs")]
+position = Vector2(-27, 73)
 
-[node name="Fire" type="AnimatedSprite2D" parent="player"]
+[node name="Fire" type="AnimatedSprite2D" parent="player_ tutorial"]
 z_index = 1
 position = Vector2(0, 2)
 scale = Vector2(4, 4)
@@ -18449,19 +18457,28 @@ frame = 2
 frame_progress = 0.468744
 script = ExtResource("27_26icx")
 
-[node name="Area2D" type="Area2D" parent="player/Fire"]
+[node name="Area2D" type="Area2D" parent="player_ tutorial/Fire"]
 position = Vector2(-2, -8)
 scale = Vector2(0.1, 0.1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Fire/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_ tutorial/Fire/Area2D"]
 shape = SubResource("CircleShape2D_wyaws")
 
 [node name="Towel" parent="." instance=ExtResource("19_dskgt")]
 z_index = 1
 position = Vector2(-87, 38)
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-87, 45)
+script = ExtResource("25_tmqm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_ap50r")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 2
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(576, 324)
@@ -18476,7 +18493,6 @@ color = Color(0.145462, 0.0238683, 6.01634e-09, 0.807843)
 metadata/_edit_use_anchors_ = true
 
 [node name="Noise_Background" type="Sprite2D" parent="."]
-visible = false
 light_mask = 2
 visibility_layer = 2
 z_index = -1
@@ -18487,7 +18503,6 @@ texture = SubResource("NoiseTexture2D_gvdyb")
 offset = Vector2(0.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_syi0g")
 position = Vector2(698, 105)
@@ -18495,9 +18510,24 @@ scale = Vector2(5.23, 5.23)
 texture = SubResource("NoiseTexture2D_8w03c")
 
 [node name="win" parent="." instance=ExtResource("29_upcyf")]
-position = Vector2(802, 583)
+position = Vector2(802, 577)
 scale = Vector2(10.0874, 1.57284)
 nextScene = ExtResource("30_rytvu")
 
-[connection signal="playermoved" from="player" to="player/Fire" method="_on_player_playermoved"]
-[connection signal="body_exited" from="player/Fire/Area2D" to="player/Fire" method="_on_area_2d_body_exited"]
+[node name="Dialogue" parent="." instance=ExtResource("24_enu8i")]
+position = Vector2(-110, 39)
+dialogue = Array[String](["vdsvdSVS", "svdsdVsD", "vdDSVDSV", "sbvdsVBSBvSD"])
+
+[node name="Dialogue_door" parent="." instance=ExtResource("33_6k5be")]
+position = Vector2(-97, -16)
+
+[node name="Dialogue_Elevator" parent="." instance=ExtResource("34_feyb3")]
+position = Vector2(94, -156)
+
+[node name="Dialogue_Window" parent="." instance=ExtResource("34_kt53q")]
+position = Vector2(-13, -158)
+
+[connection signal="playermoved" from="player_ tutorial" to="player_ tutorial/Fire" method="_on_player_playermoved"]
+[connection signal="body_exited" from="player_ tutorial/Fire/Area2D" to="player_ tutorial/Fire" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="doors/exit1" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Dialogue" method="_on_area_2d_2_body_entered"]

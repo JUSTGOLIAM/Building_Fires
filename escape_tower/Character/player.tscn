@@ -429,6 +429,7 @@ offset_bottom = -60.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial" parent="." instance=ExtResource("6_do7n8")]
+visible = false
 offset_left = -144.0
 offset_top = -43.0
 offset_right = -144.0

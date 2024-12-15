@@ -1,0 +1,165 @@
+[gd_scene load_steps=12 format=3 uid="uid://b4kwgd6qjd7l7"]
+
+[ext_resource type="Script" path="res://dialogue_elevator.gd" id="1_a0bdy"]
+[ext_resource type="Theme" uid="uid://pwo4m4x3owuu" path="res://Assets/UI/new_theme.tres" id="2_7ao7e"]
+[ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="3_1l6a0"]
+[ext_resource type="Script" path="res://label_elevator.gd" id="4_37ua2"]
+[ext_resource type="PackedScene" uid="uid://be2xp2kjwertb" path="res://Scene/man_head.tscn" id="4_qc1fb"]
+[ext_resource type="Texture2D" uid="uid://dwth5xd4yay44" path="res://Assets/UI/Modern_UI_Style_1.png" id="5_72qmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7h085"]
+size = Vector2(180, 530)
+
+[sub_resource type="LabelSettings" id="LabelSettings_go1sx"]
+font_size = 8
+font_color = Color(0.517647, 0.298039, 0.0941176, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hcce"]
+atlas = ExtResource("5_72qmo")
+region = Rect2(100, 4, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym7v2"]
+atlas = ExtResource("5_72qmo")
+region = Rect2(404, 309, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ji4q"]
+atlas = ExtResource("5_72qmo")
+region = Rect2(484, 327, 8, 4)
+
+[node name="Dialogue_Elevator" type="Node2D"]
+script = ExtResource("1_a0bdy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18, 53)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_7h085")
+
+[node name="DialogueBox" type="CanvasLayer" parent="."]
+visible = false
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="MarginContainer3" type="MarginContainer" parent="DialogueBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -519.667
+offset_top = -473.667
+offset_right = -263.887
+offset_bottom = -433.667
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="DialogueBox/MarginContainer3"]
+layout_mode = 2
+theme = ExtResource("2_7ao7e")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogueBox/MarginContainer3/MarginContainer"]
+layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer"]
+position = Vector2(0.68, 1.03)
+scale = Vector2(0.82, 0.82)
+
+[node name="Label" type="Label" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer/Node2D"]
+offset_left = 47.9512
+offset_top = 3.62195
+offset_right = 295.951
+offset_bottom = 31.622
+scale = Vector2(0.87, 0.87)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.517647, 0.298039, 0.0980392, 1)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("3_1l6a0")
+theme_override_font_sizes/font_size = 8
+text = "During a fire, you shouldn't take 
+the elevator to quickly reach the 
+1st floor."
+script = ExtResource("4_37ua2")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_7ao7e")
+
+[node name="Man_head" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer/MarginContainer" instance=ExtResource("4_qc1fb")]
+position = Vector2(15, 16)
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueBox"]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -38.0
+offset_right = -810.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_7ao7e")
+
+[node name="Panel" type="Panel" parent="DialogueBox/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_7ao7e")
+
+[node name="MarginContainer2" type="MarginContainer" parent="DialogueBox/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="Label" type="Label" parent="DialogueBox/PanelContainer/MarginContainer2"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1l6a0")
+text = "During a fire, you shouldn't stand in front of the elevator doors to quickly reach the 1st floor."
+label_settings = SubResource("LabelSettings_go1sx")
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox"]
+offset_left = 98.3333
+offset_top = 180.333
+offset_right = 105.333
+offset_bottom = 187.333
+texture = SubResource("AtlasTexture_7hcce")
+
+[node name="TextureRect2" type="TextureRect" parent="DialogueBox"]
+offset_left = 284.333
+offset_top = 208.333
+offset_right = 291.333
+offset_bottom = 215.333
+rotation = 3.14159
+texture = SubResource("AtlasTexture_7hcce")
+
+[node name="TextureRect3" type="TextureRect" parent="DialogueBox"]
+offset_left = 295.333
+offset_top = 180.333
+offset_right = 303.333
+offset_bottom = 188.333
+texture = SubResource("AtlasTexture_ym7v2")
+
+[node name="TextureRect4" type="TextureRect" parent="DialogueBox"]
+offset_left = 295.333
+offset_top = 203.333
+offset_right = 303.333
+offset_bottom = 207.333
+texture = SubResource("AtlasTexture_7ji4q")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://cflouvxifr42t"]
+
+[ext_resource type="Theme" uid="uid://pwo4m4x3owuu" path="res://Assets/UI/new_theme.tres" id="1_vrwbl"]
+[ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="2_f2hb3"]
+[ext_resource type="PackedScene" uid="uid://be2xp2kjwertb" path="res://Scene/man_head.tscn" id="3_lj3ig"]
+[ext_resource type="Texture2D" uid="uid://dwth5xd4yay44" path="res://Assets/UI/Modern_UI_Style_1.png" id="4_xdh3p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj3vi"]
+atlas = ExtResource("4_xdh3p")
+region = Rect2(100, 4, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30n72"]
+atlas = ExtResource("4_xdh3p")
+region = Rect2(404, 309, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oghei"]
+atlas = ExtResource("4_xdh3p")
+region = Rect2(484, 327, 8, 4)
+
+[node name="player_ tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+offset_right = 270.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Panel" type="Panel" parent="MarginContainer3"]
+layout_mode = 2
+theme = ExtResource("1_vrwbl")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/MarginContainer"]
+layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="MarginContainer3/MarginContainer/HBoxContainer"]
+position = Vector2(0.68, 1.03)
+scale = Vector2(0.82, 0.82)
+
+[node name="Label" type="Label" parent="MarginContainer3/MarginContainer/HBoxContainer/Node2D"]
+offset_left = 47.9512
+offset_top = 3.62195
+offset_right = 295.951
+offset_bottom = 31.622
+scale = Vector2(0.87, 0.87)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.517647, 0.298039, 0.0980392, 1)
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("2_f2hb3")
+theme_override_font_sizes/font_size = 8
+text = "There's a fire!
+You live on the 4th floor!
+The fire broke out on the 7th floor!"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="MarginContainer3/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_vrwbl")
+
+[node name="Man_head" parent="MarginContainer3/MarginContainer/HBoxContainer/MarginContainer" instance=ExtResource("3_lj3ig")]
+position = Vector2(16, 16)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 20.0
+offset_top = 3.0
+offset_right = 27.0
+offset_bottom = 10.0
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_bj3vi")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 133.0
+offset_bottom = 24.0
+rotation = 3.14159
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_bj3vi")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 128.0
+offset_top = 3.0
+offset_right = 136.0
+offset_bottom = 11.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_30n72")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 128.0
+offset_top = 15.0
+offset_right = 136.0
+offset_bottom = 19.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_oghei")

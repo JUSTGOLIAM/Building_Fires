@@ -15,3 +15,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		door_1.queue_free()
 		print("open")
 		play("open")
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	queue_free()

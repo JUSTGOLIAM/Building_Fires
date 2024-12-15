@@ -18497,6 +18497,7 @@ color = Color(0.145462, 0.0238683, 6.01634e-09, 0.807843)
 metadata/_edit_use_anchors_ = true
 
 [node name="Noise_Background" type="Sprite2D" parent="."]
+visible = false
 light_mask = 2
 visibility_layer = 2
 z_index = -1
@@ -18507,6 +18508,7 @@ texture = SubResource("NoiseTexture2D_wpmwp")
 offset = Vector2(0.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_7c0rh")
 position = Vector2(698, 105)
