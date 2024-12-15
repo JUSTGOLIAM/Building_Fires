@@ -16,23 +16,6 @@ func _ready():
 	#print(dialogue[4])
 	#print(dialogue[5])
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("interact") and playernearby: 
-		which_line += 1
-		
-		if which_line >= dialogue.size():
-			$DialogueBox.hide()
-			which_line = 0
-			
-			
-			
-		else:
-			print(dialogue)
-			$DialogueBox/PanelContainer/Text.text = dialogue[which_line]
-			
-
-
 # 当玩家进入碰撞区域时触发
 
 var playernearby = false
