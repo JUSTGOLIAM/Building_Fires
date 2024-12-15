@@ -18527,7 +18527,9 @@ position = Vector2(94, -156)
 [node name="Dialogue_Window" parent="." instance=ExtResource("34_kt53q")]
 position = Vector2(-13, -158)
 
+[connection signal="playermoved" from="player_ tutorial" to="doors/exit1" method="_on_player__tutorial_playermoved"]
 [connection signal="playermoved" from="player_ tutorial" to="player_ tutorial/Fire" method="_on_player_playermoved"]
+[connection signal="body_exited" from="player_ tutorial/Fire/Area2D" to="doors/exit1" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="player_ tutorial/Fire/Area2D" to="player_ tutorial/Fire" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="doors/exit1" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Dialogue" method="_on_area_2d_2_body_entered"]
