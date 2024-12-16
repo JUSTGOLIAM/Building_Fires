@@ -18443,10 +18443,10 @@ polygon = PackedVector2Array(682, -160, 682, -209, -115, -209, -115, 243, 499, 2
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wall_CollisionShade"]
 polygon = PackedVector2Array(676, -160, 676, -80, 532, -81, 533, -34, 676, -35, 678, 148, 677, 189, 820, 189, 821, 414, 957, 414, 957, 576, 643, 575, 644, 414, 764, 414, 781, 414, 787, 414, 787, 367, 643, 367, 644, 142, 499, 142, 499, 190, 617, 189, 613, 650, 1000, 649, 998, 358, 834, 357, 837, 120, 699, 117, 702, -160)
 
-[node name="player_ tutorial" parent="." instance=ExtResource("21_fojcs")]
+[node name="player_tutorial" parent="." instance=ExtResource("21_fojcs")]
 position = Vector2(-27, 73)
 
-[node name="Fire" type="AnimatedSprite2D" parent="player_ tutorial"]
+[node name="Fire" type="AnimatedSprite2D" parent="player_tutorial"]
 z_index = 1
 position = Vector2(0, 2)
 scale = Vector2(4, 4)
@@ -18457,11 +18457,11 @@ frame = 2
 frame_progress = 0.468744
 script = ExtResource("27_26icx")
 
-[node name="Area2D" type="Area2D" parent="player_ tutorial/Fire"]
+[node name="Area2D" type="Area2D" parent="player_tutorial/Fire"]
 position = Vector2(-2, -8)
 scale = Vector2(0.1, 0.1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_ tutorial/Fire/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_tutorial/Fire/Area2D"]
 shape = SubResource("CircleShape2D_wyaws")
 
 [node name="Towel" parent="." instance=ExtResource("19_dskgt")]
@@ -18529,9 +18529,9 @@ position = Vector2(94, -156)
 [node name="Dialogue_Window" parent="." instance=ExtResource("34_kt53q")]
 position = Vector2(-13, -158)
 
-[connection signal="playermoved" from="player_ tutorial" to="doors/exit1" method="_on_player__tutorial_playermoved"]
-[connection signal="playermoved" from="player_ tutorial" to="player_ tutorial/Fire" method="_on_player_playermoved"]
-[connection signal="body_exited" from="player_ tutorial/Fire/Area2D" to="doors/exit1" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="player_ tutorial/Fire/Area2D" to="player_ tutorial/Fire" method="_on_area_2d_body_exited"]
+[connection signal="playermoved" from="player_tutorial" to="doors/exit1" method="_on_player__tutorial_playermoved"]
+[connection signal="playermoved" from="player_tutorial" to="player_tutorial/Fire" method="_on_player_playermoved"]
+[connection signal="body_exited" from="player_tutorial/Fire/Area2D" to="doors/exit1" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="player_tutorial/Fire/Area2D" to="player_tutorial/Fire" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="doors/exit1" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Dialogue" method="_on_area_2d_2_body_entered"]
