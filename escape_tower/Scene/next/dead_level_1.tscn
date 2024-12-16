@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1ei1aha8uiwp"]
+[gd_scene load_steps=11 format=3 uid="uid://d1ei1aha8uiwp"]
 
 [ext_resource type="Script" path="res://Script/opening.gd" id="1_kdf3j"]
 [ext_resource type="Texture2D" uid="uid://yuptor3seauk" path="res://Assets/Ending/Ending Background.png" id="2_wjv85"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cv175bewyn8ub" path="res://Assets/Ending/death.png" id="3_iauqf"]
 [ext_resource type="FontFile" uid="uid://qccqn5puw4gx" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_e5hpj"]
 [ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="5_ou8wj"]
+[ext_resource type="AudioStream" uid="uid://2fq3equ8mwl2" path="res://Assets/audio/gameover.mp3" id="7_j1nq7"]
 
 [sub_resource type="Theme" id="Theme_xw43f"]
 
@@ -104,6 +105,10 @@ offset_bottom = 268.0
 text = "You waste too much time on the way "
 label_settings = SubResource("LabelSettings_bbvpd")
 autowrap_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_j1nq7")
+autoplay = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
