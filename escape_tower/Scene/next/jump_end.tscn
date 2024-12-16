@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://do2bb0tw2urov"]
+
+[ext_resource type="Script" path="res://Script/jump_end.gd" id="1_2wqso"]
+[ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="2_axmna"]
+[ext_resource type="Texture2D" uid="uid://b0k18v347wscy" path="res://Assets/Ending/window.png" id="3_jm02o"]
+[ext_resource type="Theme" uid="uid://dcsfl1wle774g" path="res://Assets/Styles/theme.tres" id="4_eewbk"]
+[ext_resource type="FontFile" uid="uid://qccqn5puw4gx" path="res://Assets/Fonts/PixelOperator8.ttf" id="5_csfn5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2wqso")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+offset_left = 397.0
+offset_top = 91.0
+offset_right = 1025.0
+offset_bottom = 154.0
+scale = Vector2(1.46286, 1.77946)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.905882, 0.4, 0, 1)
+theme_override_colors/font_outline_color = Color(0.890196, 0.27451, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_axmna")
+theme_override_font_sizes/font_size = 32
+text = "INURIED"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Label"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.77585
+anchor_top = 1.10671
+anchor_right = -0.565659
+anchor_bottom = 1.1702
+offset_left = 397.0
+offset_top = 91.0
+offset_right = 1025.0
+offset_bottom = 154.0
+scale = Vector2(0.514806, 0.540308)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.905882, 0.4, 0, 1)
+theme_override_colors/font_outline_color = Color(0.890196, 0.27451, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_axmna")
+theme_override_font_sizes/font_size = 32
+text = "Do not jump out of a window
+without protection!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1160.0
+offset_bottom = 659.0
+color = Color(0.290721, 0.290721, 0.290721, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(589, 348)
+texture = ExtResource("3_jm02o")
+
+[node name="play" type="Button" parent="."]
+offset_left = 801.0
+offset_top = 540.0
+offset_right = 921.0
+offset_bottom = 560.0
+scale = Vector2(2.42011, 2.58932)
+size_flags_horizontal = 4
+theme = ExtResource("4_eewbk")
+theme_override_fonts/font = ExtResource("5_csfn5")
+text = "Try again"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

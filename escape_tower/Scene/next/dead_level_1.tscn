@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1ei1aha8uiwp"]
+[gd_scene load_steps=10 format=3 uid="uid://d1ei1aha8uiwp"]
 
 [ext_resource type="Script" path="res://Script/opening.gd" id="1_kdf3j"]
 [ext_resource type="Texture2D" uid="uid://yuptor3seauk" path="res://Assets/Ending/Ending Background.png" id="2_wjv85"]
 [ext_resource type="Theme" uid="uid://dcsfl1wle774g" path="res://Assets/Styles/theme.tres" id="3_2xfhe"]
+[ext_resource type="Texture2D" uid="uid://cv175bewyn8ub" path="res://Assets/Ending/death.png" id="3_iauqf"]
 [ext_resource type="FontFile" uid="uid://qccqn5puw4gx" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_e5hpj"]
 [ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="5_ou8wj"]
 
@@ -31,9 +32,15 @@ grow_vertical = 2
 scale = Vector2(28.9132, 16.4124)
 
 [node name="Background" type="Sprite2D" parent="Panel"]
+self_modulate = Color(0.398412, 0.398412, 0.398412, 1)
 position = Vector2(19.8871, 19.3147)
 scale = Vector2(0.0169003, 0.0263719)
 texture = ExtResource("2_wjv85")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(20.233, 21.4472)
+scale = Vector2(0.0310092, 0.0518713)
+texture = ExtResource("3_iauqf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1

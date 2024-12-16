@@ -18250,7 +18250,7 @@ noise = SubResource("FastNoiseLite_tp6sl")
 size = Vector2(314, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jvff"]
-size = Vector2(37, 22)
+size = Vector2(41, 79.5)
 
 [node name="level1" type="Node2D"]
 
@@ -18489,6 +18489,7 @@ scale = Vector2(0.40625, 0.53125)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 2
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(576, 324)
@@ -18531,7 +18532,7 @@ shape = SubResource("RectangleShape2D_7mwbf")
 [node name="jumpWindow" parent="." instance=ExtResource("30_gn140")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jumpWindow"]
-position = Vector2(4.5, -120)
+position = Vector2(4.5, -89.75)
 shape = SubResource("RectangleShape2D_1jvff")
 
 [connection signal="playermoved" from="player" to="player" method="_on_playermoved"]
