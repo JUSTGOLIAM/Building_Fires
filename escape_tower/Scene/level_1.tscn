@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://ns4b62urgixj"]
+[gd_scene load_steps=102 format=4 uid="uid://ns4b62urgixj"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_03uy8"]
 [ext_resource type="Texture2D" uid="uid://bglra3ql0c3hu" path="res://Assets/Furniture/14_Basement_16x16.png" id="2_g6j5p"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://Script/win_level1.gd" id="29_torsa"]
 [ext_resource type="PackedScene" uid="uid://bo0cg5sooatka" path="res://Scene/jump_window.tscn" id="30_gn140"]
 [ext_resource type="Texture2D" uid="uid://bt1wp44de27on" path="res://Assets/items/shine-Sheet.png" id="33_w75i8"]
+[ext_resource type="AudioStream" uid="uid://chv421rncex1q" path="res://Assets/audio/level1.mp3" id="34_ptad2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4pi3"]
 texture = ExtResource("1_03uy8")
@@ -18585,7 +18586,11 @@ position = Vector2(6, -147)
 scale = Vector2(1.92, 1.64)
 sprite_frames = SubResource("SpriteFrames_1yn3h")
 autoplay = "default"
-frame_progress = 0.666267
+frame_progress = 0.0482602
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_ptad2")
+autoplay = true
 
 [connection signal="playermoved" from="player" to="player" method="_on_playermoved"]
 [connection signal="playermoved" from="player" to="player/Fire" method="_on_player_playermoved"]
