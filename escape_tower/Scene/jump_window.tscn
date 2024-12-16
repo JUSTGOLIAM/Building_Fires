@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo0cg5sooatka"]
+
+[ext_resource type="Script" path="res://Script/jump_window.gd" id="1_lq85a"]
+
+[node name="jumpWindow" type="Area2D"]
+script = ExtResource("1_lq85a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

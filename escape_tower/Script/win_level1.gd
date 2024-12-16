@@ -1,9 +1,6 @@
 extends Area2D
-@export var nextScene: PackedScene
-
-
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "player":
+	if body.is_in_group("player"):
 		print ("next")
-		get_tree().change_scene_to_file("res://Scene/home.tscn")
+		get_tree().change_scene_to_file("res://Scene/next/win_1.tscn")

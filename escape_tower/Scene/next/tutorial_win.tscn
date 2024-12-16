@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq1c5gajwmvmj"]
+[gd_scene load_steps=5 format=3 uid="uid://cq1c5gajwmvmj"]
 
 [ext_resource type="Script" path="res://Script/to_level1.gd" id="1_ohvve"]
-[ext_resource type="Texture2D" uid="uid://dfkiml1hmhhu1" path="res://Assets/items/background1.png" id="2_2ewh6"]
-[ext_resource type="Texture2D" uid="uid://vyfy83h0pfo5" path="res://Assets/items/background_Town2.png" id="3_ktr1y"]
+[ext_resource type="Texture2D" uid="uid://b572l7oicpcx5" path="res://Assets/Ending/win_tutorial.png" id="2_k8hvv"]
 [ext_resource type="FontFile" uid="uid://qccqn5puw4gx" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_m7olv"]
 [ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="5_hjfal"]
 
@@ -20,56 +19,38 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(28.9132, 16.4124)
 
-[node name="Background" type="Sprite2D" parent="Panel"]
-position = Vector2(17.051, 18.6444)
-scale = Vector2(0.0766282, 0.106509)
-texture = ExtResource("2_2ewh6")
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
-position = Vector2(12.6586, 25.956)
-scale = Vector2(0.115163, 0.103162)
-texture = ExtResource("3_ktr1y")
+position = Vector2(20.0946, 14.0138)
+scale = Vector2(0.0369312, 0.0640446)
+texture = ExtResource("2_k8hvv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 9.92626
-offset_top = 27.3574
-offset_right = 155.926
-offset_bottom = 79.3574
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.137291, 0.21204)
-
-[node name="play" type="Button" parent="Panel/VBoxContainer"]
+[node name="play" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 14.0766
+offset_top = 33.9378
+offset_right = 150.077
+offset_bottom = 57.9378
+scale = Vector2(0.0836, 0.145278)
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_m7olv")
 text = "Next 	Level"
 
-[node name="Exit" type="Button" parent="Panel/VBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("4_m7olv")
-text = "EXIT"
-
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 2.10976
-offset_top = 9.32222
-offset_right = 316.11
-offset_bottom = 32.3222
-scale = Vector2(0.112814, 0.410823)
+offset_left = 5.56839
+offset_top = 5.72738
+offset_right = 319.569
+offset_bottom = 28.7274
+scale = Vector2(0.0950503, 0.282868)
 theme_override_colors/font_shadow_color = Color(0.905882, 0.4, 0, 1)
 theme_override_colors/font_outline_color = Color(0.890196, 0.27451, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_hjfal")
 text = "Escaped successfully!"
 
-[connection signal="pressed" from="Panel/VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
