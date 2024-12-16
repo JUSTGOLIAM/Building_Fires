@@ -18465,7 +18465,7 @@ position = Vector2(24, 198)
 [node name="doors" type="Node" parent="."]
 
 [node name="Dialogue_innerThought_2" parent="doors" instance=ExtResource("23_yxqip")]
-position = Vector2(-54, -127)
+position = Vector2(-39, -170)
 
 [node name="Dialogue_innerThought" parent="doors" instance=ExtResource("22_3y12l")]
 position = Vector2(-95, 33)
@@ -18538,6 +18538,7 @@ position = Vector2(941, 834)
 shape = SubResource("RectangleShape2D_7mwbf")
 
 [node name="jumpWindow" parent="." instance=ExtResource("30_gn140")]
+position = Vector2(2, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jumpWindow"]
 position = Vector2(4.5, -89.75)
@@ -18547,3 +18548,4 @@ shape = SubResource("RectangleShape2D_1jvff")
 [connection signal="playermoved" from="player" to="player/Fire" method="_on_player_playermoved"]
 [connection signal="body_exited" from="player/Fire/Area2D" to="player/Fire" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="jumpWindow" to="jumpWindow" method="_on_body_exited"]
