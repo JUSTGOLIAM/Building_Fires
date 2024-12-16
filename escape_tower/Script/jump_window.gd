@@ -12,4 +12,4 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("open") and player_near and window:
 		window = false
 		print("jump out")
-		get_tree().change_scene_to_file("res://Scene/next/win_1.tscn")
+		get_tree().change_scene_to_file("res://Scene/next/jump_end.tscn")

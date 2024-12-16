@@ -18478,7 +18478,6 @@ shape = SubResource("CircleShape2D_ap50r")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 2
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(576, 324)

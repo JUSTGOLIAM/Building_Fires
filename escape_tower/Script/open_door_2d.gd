@@ -12,10 +12,7 @@ func _on_checking_body_entered(body: Node2D) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("open") and player_near and doorclose:
 		doorclose = false
-		door_1.queue_free()
+		door_1.call_deferred("queue_free")
+		#door_1.queue_free()
 		print("open")
 		play("open")
-
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	queue_free()

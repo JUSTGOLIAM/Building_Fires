@@ -84,6 +84,6 @@ func play_anim(movement):
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print(area)
-	if area.name=="Towel":
-		print("Towel Collected")
-		holdingtowel=true
+	#if area.name=="Towel":
+		#print("Towel Collected")
+		#holdingtowel=true

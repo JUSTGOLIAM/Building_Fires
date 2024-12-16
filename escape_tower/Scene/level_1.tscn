@@ -18440,7 +18440,7 @@ polygon = PackedVector2Array(500, 143, 643, 143, 644, 367, 787, 367, 788, 591, 9
 
 [node name="player" parent="." instance=ExtResource("19_faovo")]
 z_index = 2
-position = Vector2(-37, 45)
+position = Vector2(-14, 37)
 
 [node name="Fire" type="AnimatedSprite2D" parent="player"]
 z_index = 1
