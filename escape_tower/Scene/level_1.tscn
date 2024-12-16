@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://ns4b62urgixj"]
+[gd_scene load_steps=101 format=4 uid="uid://ns4b62urgixj"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_03uy8"]
 [ext_resource type="Texture2D" uid="uid://bglra3ql0c3hu" path="res://Assets/Furniture/14_Basement_16x16.png" id="2_g6j5p"]
@@ -32,6 +32,7 @@
 [ext_resource type="Shader" path="res://Scene/Some_code.gdshader" id="28_jom4e"]
 [ext_resource type="Script" path="res://Script/win_level1.gd" id="29_torsa"]
 [ext_resource type="PackedScene" uid="uid://bo0cg5sooatka" path="res://Scene/jump_window.tscn" id="30_gn140"]
+[ext_resource type="Texture2D" uid="uid://bt1wp44de27on" path="res://Assets/items/shine-Sheet.png" id="33_w75i8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4pi3"]
 texture = ExtResource("1_03uy8")
@@ -18254,6 +18255,42 @@ size = Vector2(314, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jvff"]
 size = Vector2(41, 79.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx8iq"]
+atlas = ExtResource("33_w75i8")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5p2v"]
+atlas = ExtResource("33_w75i8")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20cpx"]
+atlas = ExtResource("33_w75i8")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj1nk"]
+atlas = ExtResource("33_w75i8")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1yn3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx8iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5p2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20cpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj1nk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="level1" type="Node2D"]
 
 [node name="Node" type="Node" parent="."]
@@ -18512,7 +18549,6 @@ color = Color(0.145462, 0.0238683, 6.01634e-09, 0.807843)
 metadata/_edit_use_anchors_ = true
 
 [node name="Noise_Background" type="Sprite2D" parent="."]
-visible = false
 light_mask = 2
 visibility_layer = 2
 z_index = -1
@@ -18523,7 +18559,6 @@ texture = SubResource("NoiseTexture2D_wpmwp")
 offset = Vector2(0.2, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_7c0rh")
 position = Vector2(698, 105)
@@ -18543,6 +18578,14 @@ position = Vector2(2, -5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jumpWindow"]
 position = Vector2(4.5, -89.75)
 shape = SubResource("RectangleShape2D_1jvff")
+
+[node name="shine" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(6, -147)
+scale = Vector2(1.92, 1.64)
+sprite_frames = SubResource("SpriteFrames_1yn3h")
+autoplay = "default"
+frame_progress = 0.666267
 
 [connection signal="playermoved" from="player" to="player" method="_on_playermoved"]
 [connection signal="playermoved" from="player" to="player/Fire" method="_on_player_playermoved"]
