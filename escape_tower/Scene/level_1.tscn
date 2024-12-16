@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://ns4b62urgixj"]
+[gd_scene load_steps=91 format=4 uid="uid://ns4b62urgixj"]
 
 [ext_resource type="Texture2D" uid="uid://dsfjywt774vmx" path="res://Assets/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_03uy8"]
 [ext_resource type="Texture2D" uid="uid://bglra3ql0c3hu" path="res://Assets/Furniture/14_Basement_16x16.png" id="2_g6j5p"]
@@ -28,8 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://ekop8nvxtapc" path="res://Scene/Smoke Cloud Animation0200.png" id="26_dbxj8"]
 [ext_resource type="Shader" path="res://Scene/Smoke_2.gdshader" id="27_avy2u"]
 [ext_resource type="Shader" path="res://Scene/Some_code.gdshader" id="28_jom4e"]
-[ext_resource type="Script" path="res://Script/win_level1.gd" id="29_p37h5"]
-[ext_resource type="PackedScene" uid="uid://bxojjfltxhdn0" path="res://Scene/opening.tscn" id="30_unwu5"]
+[ext_resource type="PackedScene" uid="uid://43vsn6sx11e2" path="res://Scene/next/win.tscn" id="29_mw8d8"]
+[ext_resource type="PackedScene" uid="uid://cq1c5gajwmvmj" path="res://Scene/next/tutorial_win.tscn" id="30_mweg5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4pi3"]
 texture = ExtResource("1_03uy8")
@@ -18246,9 +18246,6 @@ shader_parameter/fireAlpha = 0.4
 color_ramp = SubResource("Gradient_qjgoy")
 noise = SubResource("FastNoiseLite_tp6sl")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkpb1"]
-size = Vector2(310, 20)
-
 [node name="level1" type="Node2D"]
 
 [node name="Node" type="Node" parent="."]
@@ -18518,16 +18515,11 @@ position = Vector2(698, 105)
 scale = Vector2(5.23, 5.23)
 texture = SubResource("NoiseTexture2D_dpuwc")
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("29_p37h5")
-nextScene = ExtResource("30_unwu5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(942, 825)
-shape = SubResource("RectangleShape2D_pkpb1")
+[node name="win" parent="." instance=ExtResource("29_mw8d8")]
+position = Vector2(943, 779)
+scale = Vector2(10.0874, 1.57284)
+nextScene = ExtResource("30_mweg5")
 
 [connection signal="playermoved" from="player" to="player" method="_on_playermoved"]
 [connection signal="playermoved" from="player" to="player/Fire" method="_on_player_playermoved"]
 [connection signal="body_exited" from="player/Fire/Area2D" to="player/Fire" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
