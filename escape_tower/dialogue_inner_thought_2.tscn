@@ -1,0 +1,166 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjeg171rc32pq"]
+
+[ext_resource type="Theme" uid="uid://pwo4m4x3owuu" path="res://Assets/UI/new_theme.tres" id="1_c7rki"]
+[ext_resource type="Script" path="res://dialogue_inner_thought_2.gd" id="1_h80tg"]
+[ext_resource type="FontFile" uid="uid://cghgc7rm1slap" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="2_ilf82"]
+[ext_resource type="Script" path="res://Dialogue_innerThought_2.gd" id="3_37wsl"]
+[ext_resource type="PackedScene" uid="uid://lckqciur01t4" path="res://player_head.tscn" id="4_kgkbk"]
+[ext_resource type="Texture2D" uid="uid://dwth5xd4yay44" path="res://Assets/UI/Modern_UI_Style_1.png" id="5_wpkci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntct3"]
+size = Vector2(465, 610)
+
+[sub_resource type="LabelSettings" id="LabelSettings_swvt3"]
+font_size = 8
+font_color = Color(0.517647, 0.298039, 0.0941176, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ws57"]
+atlas = ExtResource("5_wpkci")
+region = Rect2(100, 4, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k3cd"]
+atlas = ExtResource("5_wpkci")
+region = Rect2(404, 309, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrhfc"]
+atlas = ExtResource("5_wpkci")
+region = Rect2(484, 327, 8, 4)
+
+[node name="Dialogue_innerThought_2" type="Node2D"]
+script = ExtResource("1_h80tg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(46.5, 61)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_ntct3")
+
+[node name="DialogueBox" type="CanvasLayer" parent="."]
+visible = false
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="MarginContainer3" type="MarginContainer" parent="DialogueBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -519.667
+offset_top = -473.667
+offset_right = -263.887
+offset_bottom = -433.667
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="DialogueBox/MarginContainer3"]
+layout_mode = 2
+theme = ExtResource("1_c7rki")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogueBox/MarginContainer3/MarginContainer"]
+layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer"]
+position = Vector2(0.68, 1.03)
+scale = Vector2(0.82, 0.82)
+
+[node name="Label" type="Label" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer/Node2D"]
+offset_left = 47.9512
+offset_top = 3.62195
+offset_right = 295.951
+offset_bottom = 31.622
+scale = Vector2(0.87, 0.87)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.517647, 0.298039, 0.0980392, 1)
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("2_ilf82")
+theme_override_font_sizes/font_size = 8
+text = "It's a fire drill. I got a wet towel 
+for you. Get closer to pick up!"
+script = ExtResource("3_37wsl")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_c7rki")
+
+[node name="Player_head" parent="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer/MarginContainer" instance=ExtResource("4_kgkbk")]
+position = Vector2(16.0003, 15.667)
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueBox"]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -38.0
+offset_right = -810.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_c7rki")
+
+[node name="Panel" type="Panel" parent="DialogueBox/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_c7rki")
+
+[node name="MarginContainer2" type="MarginContainer" parent="DialogueBox/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 6
+
+[node name="Label" type="Label" parent="DialogueBox/PanelContainer/MarginContainer2"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ilf82")
+text = "bvbsvdavdfvdafvdfvfsadvdfavdfavdavdafvadfsvsadvsdVSdvSDVDS"
+label_settings = SubResource("LabelSettings_swvt3")
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox"]
+offset_left = 98.3333
+offset_top = 180.333
+offset_right = 105.333
+offset_bottom = 187.333
+texture = SubResource("AtlasTexture_8ws57")
+
+[node name="TextureRect2" type="TextureRect" parent="DialogueBox"]
+offset_left = 284.333
+offset_top = 208.333
+offset_right = 291.333
+offset_bottom = 215.333
+rotation = 3.14159
+texture = SubResource("AtlasTexture_8ws57")
+
+[node name="TextureRect3" type="TextureRect" parent="DialogueBox"]
+offset_left = 295.333
+offset_top = 180.333
+offset_right = 303.333
+offset_bottom = 188.333
+texture = SubResource("AtlasTexture_3k3cd")
+
+[node name="TextureRect4" type="TextureRect" parent="DialogueBox"]
+offset_left = 295.333
+offset_top = 203.333
+offset_right = 303.333
+offset_bottom = 207.333
+texture = SubResource("AtlasTexture_mrhfc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer/Node2D/Label" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="DialogueBox/MarginContainer3/MarginContainer/HBoxContainer/Node2D/Label" method="_on_area_2d_body_exited"]

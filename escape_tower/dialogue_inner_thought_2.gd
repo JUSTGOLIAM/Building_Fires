@@ -24,15 +24,13 @@ func _ready():
 var playernearby = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "player_tutorial":
+	if body.name == "player":
 		$DialogueBox.show()
 		playernearby = true
 
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.name == "player_tutorial":
+	if body.name == "player":
 		$DialogueBox.hide()
 		playernearby = false
-		
-		

@@ -18517,7 +18517,7 @@ scale = Vector2(10.0874, 1.57284)
 nextScene = ExtResource("30_rytvu")
 
 [node name="Dialogue" parent="." instance=ExtResource("24_enu8i")]
-position = Vector2(-110, 39)
+position = Vector2(-109, 46)
 dialogue = Array[String](["vdsvdSVS", "svdsdVsD", "vdDSVDSV", "sbvdsVBSBvSD"])
 
 [node name="Dialogue_door" parent="." instance=ExtResource("33_6k5be")]
