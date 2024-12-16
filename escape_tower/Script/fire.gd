@@ -20,11 +20,17 @@ func _on_player_playermoved() -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "player_tutorial":
 		print ("die die die")
-		get_tree().change_scene_to_file("res://Scene/next/dead_tutorial.tscn")
+		print(get_tree().current_scene.name)
+		if get_tree().current_scene.name == "Home":
+			get_tree().change_scene_to_file("res://Scene/next/dead_tutorial.tscn")
+		else:
+			get_tree().change_scene_to_file("res://Scene/next/dead_level_1.tscn")
+		#call_deferred("scene_change")
 		#var Dead_level1=preload("res://Scene/next/dead_level_1.tscn").instantiate()
 		#if body.holdingtowel == true:
 			#Dead_level1.CauseOfDeath="You got caught on fire becasue you waste too much time on making the wet towel"
 		#
-		#get_tree().root.add_child(Dead_level1)
 		#get_tree().current_scene.queue_free()
 	
+func scene_change():
+	get_tree().change_scene_to_file("res://Scene/next/dead_tutorial.tscn")

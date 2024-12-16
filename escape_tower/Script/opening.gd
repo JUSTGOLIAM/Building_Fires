@@ -1,5 +1,5 @@
 extends Control
-var CauseOfDeath="You caught on fire because you waste too much time on your way out"
+var CauseOfDeath="You caught on fire because you waste too much time on your way out!"
 func _ready() -> void:
 	if  $CauseOfDeath:
 		$CauseOfDeath.text=CauseOfDeath
